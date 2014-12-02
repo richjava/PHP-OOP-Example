@@ -1,18 +1,11 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>OOP Example</title>
+        <title>PHP OOP Example</title>
     </head>
     <body>
 	<?php
-	
-
 	final class Index {
 
 	    public function init() {
@@ -34,16 +27,25 @@ and open the template in the editor.
 
 	    public function run() {
 		$cat = new Cat();
+		//breathe() is a polymorphic method, so we can use the 
+		//respirate($animal)method instead of the following line 
 		//echo "<br/>".$cat->breathe()."<br/>";
-		echo $cat->move()."<br/>";
 		self::respirate($cat);
-				
+		echo $cat->move()."<br/>";
+						
 		$fish = new Fish();
+		//breathe() is a polymorphic method, so we can use the 
+		//respirate($animal)method instead of the following line
 		//echo "<br/>".$fish->breathe()."<br/>";
 		self::respirate($fish);
 		echo $fish->move()."<br/>";
 	    }
-	    
+	 
+	    /**
+	     * This function makes use of polymorphism. Both subtypes of 
+	     * Animal implement breathe(), so either can be passed in.
+	     * @param type $animal
+	     */
 	    private function respirate($animal){
 		echo $animal->breathe()."<br/>";
 	    }
